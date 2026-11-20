@@ -31,12 +31,13 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          pytest -v
+          python -m pytest -v
 
   deploy:
     name: Deploy Application
     needs: test
     runs-on: ubuntu-latest
+
     if: github.ref == 'refs/heads/main'
 
     steps:
